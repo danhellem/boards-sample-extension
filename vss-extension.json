@@ -1,0 +1,47 @@
+{
+    "manifestVersion": 1,
+    "id": "danhellem-my-first-extension",
+    "publisher": "DanHellem2",
+    "version": "1.0.5",
+    "name": "My First Extension",
+    "description": "A sample Visual Studio Services extension",
+    "public": false,
+    "categories": ["Azure Boards"],  
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "my-query-work-item-action",
+            "type": "ms.vss-web.action",
+            "targets": [
+                "ms.vss-work-web.work-item-query-menu"
+            ],
+            "properties": {
+                "name": "Run My Query",
+                "title": "Run My Query",
+                "text": "Run My Query",
+                "groupId": "actions",
+                "uri": "query-work-item-action.html",
+                "icon": "images/apple.ico"
+            }
+        }
+    ],
+    "files": [
+        {
+            "path": "query-work-item-action.html",
+            "addressable": true
+        },        
+        {
+            "path": "images/apple.ico",
+            "addressable": true
+        },    
+        {
+            "path": "node_modules/azure-devops-extension-sdk",
+            "addressable": true,
+            "packagePath": "lib"
+        }
+    ]
+}
