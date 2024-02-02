@@ -1,33 +1,74 @@
 <!DOCTYPE html>
-	<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>Action Sample</title>
-		<script src="lib/SDK.min.js"></script>
-		<script>
-			SDK.init();
+<html lang="en">
 
-			// Use an IIFE to create an object that satisfies the IContributedMenuSource contract
-			var menuContributionHandler = (function () {
-				"use strict";
-				return {
-					// This is a callback that gets invoked when a user selects the newly contributed menu item
-					// The actionContext parameter contains context data surrounding the circumstances of this
-					// action getting invoked.
-					execute: function (actionContext) {
-						alert("Hello, world");
-					}
-				};
-			}());
+<head>
+	<meta charset="UTF-8">
+	<title>Action Sample</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>   
+	<script>
+		SDK.init();
 
-			// Associate the menuContributionHandler object with the "myAction" menu contribution from the manifest.
-			SDK.register(SDK.getContributionId(), menuContributionHandler);
-		</script>
-	</head>
-	<body>
-		<div>
-			The end user doesn't see the content on this page.
-			It is only in the background to handle the contributed menu item being selected.
-		</div>
-	</body>
-	</html>
+		// Use an IIFE to create an object that satisfies the IContributedMenuSource contract
+		var menuContributionHandler = (function () {
+			"use strict";
+			return {
+				// This is a callback that gets invoked when a user selects the newly contributed menu item
+				// The actionContext parameter contains context data surrounding the circumstances of this
+				// action getting invoked.
+				execute: function (actionContext) {
+					alert("Hello, world");
+					console.log(actionContext);
+				}
+			};
+		}());
+
+		// Associate the menuContributionHandler object with the "myAction" menu contribution from the manifest.
+		SDK.register(SDK.getContributionId(), menuContributionHandler);
+	</script>
+
+	<script>
+		window.requirejs.config({
+			enforceDefine: true,
+			paths: {
+				'SDK': './lib/SDK.min'
+			}
+		});
+		window.requirejs(['SDK'], function (SDK) {
+			if (typeof SDK !== 'undefined') {
+				console.log("SDK is defined. Trying to initialize...");
+				SDK.init();
+				SDK.ready().then(() => {
+					console.log("SDK is ready");
+
+					// Use an IIFE to create an object that satisfies the IContributedMenuSource contract
+					var menuContributionHandler = (function () {
+						"use strict";
+						return {
+							// This is a callback that gets invoked when a user selects the newly contributed menu item
+							// The actionContext parameter contains context data surrounding the circumstances of this
+							// action getting invoked.
+							execute: function (actionContext) {
+								alert("Hello, world");
+							}
+						};
+					}());
+
+					// Associate the menuContributionHandler object with the "myAction" menu contribution from the manifest.
+					SDK.register(SDK.getContributionId(), menuContributionHandler);
+
+				});
+			} else {
+				console.log('SDK is not defined');
+			}
+		});
+	</script>
+</head>
+
+<body>
+	<div>
+		The end user doesn't see the content on this page.
+		It is only in the background to handle the contributed menu item being selected.
+	</div>
+</body>
+
+</html>

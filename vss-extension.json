@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "danhellem-my-first-extension",
     "publisher": "DanHellem2",
-    "version": "1.0.5",
+    "version": "1.0.8",
     "name": "My First Extension",
     "description": "A sample Visual Studio Services extension",
     "public": false,
