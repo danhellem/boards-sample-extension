@@ -17,21 +17,21 @@
             "id": "my-query-work-item-action",
             "type": "ms.vss-web.action",
             "targets": [
-                "ms.vss-work-web.work-item-query-menu"
+                "ms.vss-work-web.backlog-item-menu"
             ],
             "properties": {
-                "name": "Run My Query",
-                "title": "Run My Query",
-                "text": "Run My Query",
+                "name": "Custom Backlog Action",
+                "title": "Custom Backlog Action",
+                "text": "Custom Backlog Action",
                 "groupId": "actions",
-                "uri": "query-work-item-action.html",
+                "uri": "backlog-item-menu-action.html",
                 "icon": "images/apple.ico"
             }
         }
     ],
     "files": [
         {
-            "path": "query-work-item-action.html",
+            "path": "backlog-item-menu-action.html",
             "addressable": true
         },        
         {
