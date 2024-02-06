@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>work item form observer example</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+</head>
+
+<body>
+
+    <!--Jquery/Javascript Section-->
+    <script>
+
+        window.requirejs.config({
+            enforceDefine: true,
+            paths: {
+                'SDK': './lib/SDK.min'
+            }
+        });      
+
+        window.requirejs(['SDK'], function (SDK) {
+
+            if (typeof SDK !== 'undefined') {
+
+                console.log("SDK is defined. Trying to initialize...");
+
+                SDK.init({                   
+                    usePlatformScripts: true
+                });                
+
+                SDK.ready().then(() => {
+                    console.log("SDK is ready");
+
+                    SDK.register(SDK.getContributionId(), function () {                        
+                                                
+                        return {
+                            // Called when the active work item is modified
+                            onFieldChanged: function (args) {
+                                console.log("onFieldChanged");
+                            },
+
+                            // Called when a new work item is being loaded in the UI
+                            onLoaded: function (args) {
+                                console.log("onLoaded");
+                            },
+
+                            // Called when the active work item is being unloaded in the UI
+                            onUnloaded: function (args) {
+                                console.log("onUnloaded");
+                            },
+
+                            // Called after the work item has been saved
+                            onSaved: function (args) {
+                                console.log("onSaved");
+                            },
+
+                            // Called when the work item is reset to its unmodified state (undo)
+                            onReset: function (args) {
+                                console.log("onReset");
+                            },
+
+                            // Called when the work item has been refreshed from the server
+                            onRefreshed: function (args) {
+                                console.log("onRefreshed");
+                            }
+                        }
+                    });                  			
+
+                });
+
+            } else {
+                console.log('SDK is not defined');
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>

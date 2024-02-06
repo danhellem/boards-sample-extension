@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "danhellem-my-first-extension",
     "publisher": "DanHellem2",
-    "version": "1.0.19",
+    "version": "1.0.8",
     "name": "My First Extension",
     "description": "A sample Visual Studio Services extension",
     "public": false,
@@ -16,20 +16,24 @@
     ],
     "contributions": [
         {
-            "id": "work-item-form-observer",
-            "type": "ms.vss-work-web.work-item-notifications",
-            "description": "work item form observer",
+            "id": "my-query-work-item-action",
+            "type": "ms.vss-web.action",
             "targets": [
-                "ms.vss-work-web.work-item-form"
+                "ms.vss-work-web.backlog-item-menu"
             ],
             "properties": {
-                "uri": "work-item-form-observer.html"
+                "name": "Custom Backlog Action",
+                "title": "Custom Backlog Action",
+                "text": "Custom Backlog Action",
+                "groupId": "actions",
+                "uri": "backlog-item-menu-action.html",
+                "icon": "images/apple.ico"
             }
         }
     ],
     "files": [
         {
-            "path": "work-item-form-observer.html",
+            "path": "backlog-item-menu-action.html",
             "addressable": true
         },
         {
