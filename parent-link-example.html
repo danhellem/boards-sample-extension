@@ -17,13 +17,7 @@
             paths: {
                 'SDK': './lib/SDK.min'
             }
-        });
-
-        //List of Projects to run the extension in; Make sure the name is exact
-        var arrayProject = ['Temp'];
-
-        //List of Work Item Types to use this Extension; Remember to capatalize the first letters
-        var arrayWIT = ['Feature'];
+        });      
 
         window.requirejs(['SDK'], function (SDK) {
 
@@ -33,21 +27,7 @@
 
                 SDK.init({                   
                     usePlatformScripts: true
-                });
-
-                //Initialize
-                //VSS.init({
-                //    explicitNotifyLoaded: true,
-                //    usePlatformScripts: true
-                //});
-
-
-
-                //function getWorkItemFormService() {
-                //    return _WorkItemServices.WorkItemFormService.getService();
-                //}
-
-                //var witClient = VSS_Service.getCollectionClient(TFS_Wit_WebApi.WorkItemTrackingHttpClient);
+                });                
 
                 SDK.ready().then(() => {
                     console.log("SDK is ready");
@@ -85,24 +65,8 @@
                                 console.log("onRefreshed");
                             }
                         }
-                    });
+                    });                  			
 
-                    //var onFieldChanged = (function () {    
-                    //    "use strict";
-
-                    //    return {
-
-                    //        execute: function (actionContext) {
-                    //            alert("onFieldChanged");
-                    //            console.log(actionContext);
-                    //        }
-                    //    }
-
-                    //}());				
-
-                    //SDK.register(SDK.getContributionId(), onFieldChanged);
-                    //SDK.register(SDK.getContributionId(), onLoaded);  
-                    //SDK.notifyLoadSucceeded();
                 });
 
             } else {
