@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "danhellem-my-first-extension",
     "publisher": "DanHellem2",
-    "version": "1.0.18",
+    "version": "1.0.19",
     "name": "My First Extension",
     "description": "A sample Visual Studio Services extension",
     "public": false,
@@ -18,18 +18,18 @@
         {
             "id": "work-item-form-observer",
             "type": "ms.vss-work-web.work-item-notifications",
-            "description": "Require parent links to certain work items",
+            "description": "work item form observer",
             "targets": [
                 "ms.vss-work-web.work-item-form"
             ],
             "properties": {
-                "uri": "parent-link-example.html"
+                "uri": "work-item-form-observer.html"
             }
         }
     ],
     "files": [
         {
-            "path": "parent-link-example.html",
+            "path": "work-item-form-observer.html",
             "addressable": true
         },
         {
