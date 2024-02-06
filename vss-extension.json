@@ -2,11 +2,13 @@
     "manifestVersion": 1,
     "id": "danhellem-my-first-extension",
     "publisher": "DanHellem2",
-    "version": "1.0.8",
+    "version": "1.0.18",
     "name": "My First Extension",
     "description": "A sample Visual Studio Services extension",
     "public": false,
-    "categories": ["Azure Boards"],  
+    "categories": [
+        "Azure Boards"
+    ],
     "targets": [
         {
             "id": "Microsoft.VisualStudio.Services"
@@ -14,30 +16,26 @@
     ],
     "contributions": [
         {
-            "id": "my-query-work-item-action",
-            "type": "ms.vss-web.action",
+            "id": "work-item-form-observer",
+            "type": "ms.vss-work-web.work-item-notifications",
+            "description": "Require parent links to certain work items",
             "targets": [
-                "ms.vss-work-web.backlog-item-menu"
+                "ms.vss-work-web.work-item-form"
             ],
             "properties": {
-                "name": "Custom Backlog Action",
-                "title": "Custom Backlog Action",
-                "text": "Custom Backlog Action",
-                "groupId": "actions",
-                "uri": "backlog-item-menu-action.html",
-                "icon": "images/apple.ico"
+                "uri": "parent-link-example.html"
             }
         }
     ],
     "files": [
         {
-            "path": "backlog-item-menu-action.html",
+            "path": "parent-link-example.html",
             "addressable": true
-        },        
+        },
         {
             "path": "images/apple.ico",
             "addressable": true
-        },    
+        },
         {
             "path": "node_modules/azure-devops-extension-sdk",
             "addressable": true,
