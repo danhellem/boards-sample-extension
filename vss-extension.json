@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "danhellem-my-first-extension",
     "publisher": "DanHellem2",
-    "version": "1.0.8",
+    "version": "1.0.10",
     "name": "My First Extension",
     "description": "A sample Visual Studio Services extension",
     "public": false,
@@ -17,7 +17,8 @@
             "id": "my-query-work-item-action",
             "type": "ms.vss-web.action",
             "targets": [
-                "ms.vss-work-web.backlog-item-menu"
+                "ms.vss-work-web.backlog-item-menu",
+                "ms.vss-work-web.work-item-context-menu"                
             ],
             "properties": {
                 "name": "Custom Backlog Action",
