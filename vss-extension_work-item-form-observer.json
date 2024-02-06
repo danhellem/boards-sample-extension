@@ -18,18 +18,18 @@
         {
             "id": "work-item-form-observer",
             "type": "ms.vss-work-web.work-item-notifications",
-            "description": "work item form observer",
+            "description": "Require parent links to certain work items",
             "targets": [
                 "ms.vss-work-web.work-item-form"
             ],
             "properties": {
-                "uri": "work-item-form-observer.html"
+                "uri": "parent-link-example.html"
             }
         }
     ],
     "files": [
         {
-            "path": "work-item-form-observer.html",
+            "path": "parent-link-example.html",
             "addressable": true
         },
         {
