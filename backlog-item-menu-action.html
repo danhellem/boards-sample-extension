@@ -13,6 +13,7 @@
 				'SDK': './lib/SDK.min'
 			}
 		});
+		
 		window.requirejs(['SDK'], function (SDK) {
 			if (typeof SDK !== 'undefined') {
 				console.log("SDK is defined. Trying to initialize...");
