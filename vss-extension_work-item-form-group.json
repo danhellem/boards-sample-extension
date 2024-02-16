@@ -1,0 +1,42 @@
+{
+    "manifestVersion": 1,
+    "id": "danhellem-my-first-extension",
+    "publisher": "DanHellem2",
+    "version": "1.0.24",
+    "name": "My First Extension",
+    "description": "A sample Visual Studio Services extension",
+    "public": false,
+    "categories": [
+        "Azure Boards"
+    ],
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "sample-work-item-form-group",
+            "type": "ms.vss-work-web.work-item-form-group",
+            "targets": [
+                "ms.vss-work-web.work-item-form"                
+            ],
+            "properties": {
+                "name": "My Group",                
+                "uri": "work-item-form-group.html",
+                "height": 600
+            }
+        }
+    ],
+    "files": [
+        {
+            "path": "work-item-form-group.html",
+            "addressable": true
+        },        
+        {
+            "path": "node_modules/azure-devops-extension-sdk",
+            "addressable": true,
+            "packagePath": "lib"
+        }
+    ]
+}
