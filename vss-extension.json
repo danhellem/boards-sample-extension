@@ -1,8 +1,8 @@
 {
     "manifestVersion": 1,
     "id": "danhellem-my-first-extension",
-    "publisher": "DanHellem2",
-    "version": "1.0.19",
+    "publisher": "DanHellem",
+    "version": "1.0.11",
     "name": "My First Extension",
     "description": "A sample Visual Studio Services extension",
     "public": false,
@@ -16,20 +16,23 @@
     ],
     "contributions": [
         {
-            "id": "work-item-form-observer",
-            "type": "ms.vss-work-web.work-item-notifications",
-            "description": "work item form observer",
-            "targets": [
+            "id": "work-item-form-control",
+            "type": "ms.vss-work-web.work-item-form-control",
+            "targets": [                              
                 "ms.vss-work-web.work-item-form"
             ],
             "properties": {
-                "uri": "work-item-form-observer.html"
+                "name": "Custom control",               
+                "uri": "work-item-form-control.html",                 
+                "icon": "images/apple.ico",   
+                "groupId": "actions", 
+                "height": 90
             }
         }
     ],
     "files": [
         {
-            "path": "work-item-form-observer.html",
+            "path": "work-item-form-control.html",
             "addressable": true
         },
         {
