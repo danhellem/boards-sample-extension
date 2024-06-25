@@ -16,12 +16,14 @@
     ],
     "contributions": [
         {
-            "id": "work-item-form-observer",
+            "id": "button-id-1",
             "type": "ms.vss-work-web.work-item-notifications",
             "description": "work item form observer",
             "targets": [
-                "ms.vss-work-web.work-item-form"
-            ],
+				"ms.vss-work-web.backlog-item-menu",
+				"ms.vss-work-web.query-result-work-item-menu",
+				"ms.vss-work-web.work-item-context-menu"
+			],
             "properties": {
                 "uri": "work-item-form-observer.html"
             }

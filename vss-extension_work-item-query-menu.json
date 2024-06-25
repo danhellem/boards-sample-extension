@@ -1,8 +1,8 @@
 {
     "manifestVersion": 1,
     "id": "danhellem-my-first-extension",
-    "publisher": "",
-    "version": "1.0.1",
+    "publisher": "DanHellem",
+    "version": "1.0.22",
     "name": "My First Extension",
     "description": "A sample Visual Studio Services extension",
     "public": false,
@@ -16,16 +16,16 @@
     ],
     "contributions": [
         {
-            "id": "my-query-work-item-action",
+            "id": "my-work-item-query-menu",
             "type": "ms.vss-web.action",
-            "targets": [
-                "ms.vss-work-web.backlog-item-menu"
-            ],
+            "targets": [				
+				"ms.vss-work-web.work-item-query-menu"
+			],
             "properties": {
-                "name": "Custom Backlog Action",
-                "title": "Custom Backlog Action",
-                "text": "Custom Backlog Action",
-                "groupId": "actions",
+                "name": "Dummy Action 1",
+                "title": "Dummy Action 1",
+                "text": "Dummy Action 1",
+                "group": "actions",
                 "uri": "item-menu-action.html",
                 "icon": "images/apple.ico"
             }
