@@ -1,8 +1,8 @@
 {
     "manifestVersion": 1,
     "id": "danhellem-my-first-extension",
-    "publisher": "",
-    "version": "1.0.21",
+    "publisher": "DanHellem",
+    "version": "1.0.23",
     "name": "My First Extension",
     "description": "A sample Visual Studio Services extension",
     "public": false,
@@ -16,20 +16,25 @@
     ],
     "contributions": [
         {
-            "id": "work-item-form-observer",
-            "type": "ms.vss-work-web.work-item-notifications",
-            "description": "work item form observer",
-            "targets": [
-                "ms.vss-work-web.work-item-form"
-            ],
+            "id": "my-work-item-query-menu",
+            "type": "ms.vss-web.action",
+            "targets": [				
+				"ms.vss-work-web.work-item-query-menu"
+			],
             "properties": {
-                "uri": "work-item-form-observer.html"
+                "name": "Dummy Action 1",
+                "title": "Dummy Action 1",
+                "text": "Dummy Action 1",
+                "group": "actions",
+                "uri": "item-menu-action.html",
+                "icon": "images/apple.ico",
+                "supportedScopes": [ "project_team" ]
             }
         }
     ],
     "files": [
         {
-            "path": "work-item-form-observer.html",
+            "path": "item-menu-action.html",
             "addressable": true
         },
         {
