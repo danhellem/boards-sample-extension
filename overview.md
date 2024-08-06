@@ -1,3 +1,3 @@
 # Azure Boards Sample Extensions
 
-Used for testing extensible features of Azure Boards.
+Used for testing contribution points and extensions for Azure Boards.
