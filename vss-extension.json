@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "danhellem-my-first-extension",
     "publisher": "DanHellem",
-    "version": "1.0.23",
+    "version": "1.0.24",
     "name": "My First Extension",
     "description": "A sample Visual Studio Services extension",
     "public": false,
@@ -16,19 +16,16 @@
     ],
     "contributions": [
         {
-            "id": "my-work-item-query-menu",
+            "id": "work-item-toolbar-menu",
             "type": "ms.vss-web.action",
             "targets": [				
-				"ms.vss-work-web.work-item-query-menu"
+				"ms.vss-work-web.work-item-toolbar-menu"
 			],
             "properties": {
-                "name": "Dummy Action 1",
-                "title": "Dummy Action 1",
-                "text": "Dummy Action 1",
-                "group": "actions",
+                "name": "Example Action",
+                "text": "Example Action",                
                 "uri": "item-menu-action.html",
-                "icon": "images/apple.ico",
-                "supportedScopes": [ "project_team" ]
+                "icon": "images/apple.ico"                
             }
         }
     ],
