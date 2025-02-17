@@ -1,8 +1,8 @@
 {
     "manifestVersion": 1,
     "id": "danhellem-my-first-extension",
-    "publisher": "DanHellem",
-    "version": "1.0.24",
+    "publisher": "",
+    "version": "1.0.38",
     "name": "My First Extension",
     "description": "A sample Visual Studio Services extension",
     "public": false,
@@ -16,28 +16,23 @@
     ],
     "contributions": [
         {
-            "id": "work-item-toolbar-menu",
-            "type": "ms.vss-web.action",
-            "targets": [				
-				"ms.vss-work-web.work-item-toolbar-menu"
-			],
+            "id": "sample-work-item-form-group",
+            "type": "ms.vss-work-web.work-item-form-group",
+            "targets": [
+                "ms.vss-work-web.work-item-form"                
+            ],
             "properties": {
-                "name": "Example Action",
-                "text": "Example Action",                
-                "uri": "item-menu-action.html",
-                "icon": "images/apple.ico"                
+                "name": "My Group",                
+                "uri": "work-item-form-group.html",
+                "height": 600
             }
         }
     ],
     "files": [
         {
-            "path": "item-menu-action.html",
+            "path": "work-item-form-group.html",
             "addressable": true
-        },
-        {
-            "path": "images/apple.ico",
-            "addressable": true
-        },
+        },        
         {
             "path": "node_modules/azure-devops-extension-sdk",
             "addressable": true,

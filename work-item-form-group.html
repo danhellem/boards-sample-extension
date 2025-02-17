@@ -29,8 +29,8 @@
                     usePlatformScripts: true
                 });                
 
-                SDK.ready().then(() => {
-                    console.log("SDK is ready");
+                SDK.ready().then(async () => {
+                    console.log("SDK is ready");                   
 
                     SDK.register(SDK.getContributionId(), function () {                        
                                                 
@@ -39,7 +39,22 @@
                             onFieldChanged: function (args) {
                                 console.log("onFieldChanged");
                                 console.log(args);
-                                $(".events").append($("<div/>").text("onFieldChanged - " + JSON.stringify(args)));
+                                //$(".events").append($("<div/>").text("onFieldChanged - " + JSON.stringify(args)));
+
+                                SDK.getService("ms.vss-work-web.work-item-form").then(workItemFormService => {
+                                    //workItemFormService.setFieldValue(
+                                    //    "System.Title",
+                                    //    "Title set from your extension!"
+                                    //);  
+                                    
+                                    workItemFormService.getFieldValue("System.Title").then(value => {
+                                        console.log("Title value: " + value);                                        
+                                    }).catch(error => {
+                                        console.error("Error getting field value:", error);
+                                    });
+                                }).catch(error => {
+                                    console.error("Error getting WorkItemFormService:", error);
+                                });                                
                             },
 
                             // Called when a new work item is being loaded in the UI
